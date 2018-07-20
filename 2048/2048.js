@@ -315,6 +315,16 @@ var game = {
             }
         }
         return -1;
+    },
+    // 使用道具
+    useHammer: function (panel, ev) {
+        var idStr = ev.target.getAttribute('id');
+        // 选择了道具
+        if (panel.className.indexOf('selectedHammer') != -1) {
+            this.data[idStr.charAt(1)][idStr.charAt(2)] = 0;
+            panel.classList.remove('selectedHammer');
+            this.updateView();
+        }
     }
 }
 //onload事件：当页面加载*后*自动执行
@@ -343,4 +353,30 @@ window.onload = function () {
             //否则如果按右键，调用moveRight
         }
     }
+    // 移动端手势
+    var gridPanel = document.getElementById('gridPanel');
+    var hammer = new Hammer(gridPanel);
+    hammer.get('swipe').set({
+        direction: Hammer.DIRECTION_ALL
+    });
+    hammer.on('swipeup', function (ev) {
+        game.moveUp();
+    }).on('swipedown', function (ev) {
+        game.moveDown();
+    }).on('swipeleft', function (ev) {
+        game.moveLeft();
+    }).on('swiperight', function (ev) {
+        game.moveRight();
+    }).on('doubletap', function (ev) {
+        game.useHammer(gridPanel, ev);
+    });
+    // 道具
+    var iconHammer = document.getElementById('iconHammer');
+    iconHammer.addEventListener('click', function () {
+        if (gridPanel.className.indexOf('selectedHammer') == -1) {
+            gridPanel.classList.add('selectedHammer');
+        } else {
+            gridPanel.classList.remove('selectedHammer');
+        }
+    })
 }

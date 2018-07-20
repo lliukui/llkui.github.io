@@ -1,93 +1,98 @@
 @charset "utf-8";
 #gridPanel {
-    width: 480px;
-    height: 480px;
+    width: 330px;
+    height: 330px;
     margin: 0 auto;
     background-color: #bbada0;
     border-radius: 10px;
     position: relative;
+    border:5px solid #fff;
+}
+
+#gridPanel.selectedHammer{
+    border:5px solid #d44545;
 }
 
 .grid,
 .cell {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     border-radius: 6px;
 }
 
 .grid {
     background-color: #ccc0b3;
-    margin: 16px 0 0 16px;
+    margin: 10px 0 0 10px;
     float: left;
 }
 
 .cell {
     /*margin:16px 0 0 16px;
- float:left;
- position:relative;
- z-index:10;
- top:-464px;
- left:0;*/
+    float:left;
+    position:relative;
+    z-index:10;
+    top:-464px;
+    left:0;*/
     position: absolute;
     text-align: center;
-    line-height: 100px;
-    font-size: 60px;
+    line-height: 70px;
+    font-size: 30px;
 }
 
 #c00,
 #c01,
 #c02,
 #c03 {
-    top: 16px;
+    top: 10px;
 }
 
 #c10,
 #c11,
 #c12,
 #c13 {
-    top: 132px;
+    top: 90px;
 }
 
 #c20,
 #c21,
 #c22,
 #c23 {
-    top: 248px;
+    top: 170px;
 }
 
 #c30,
 #c31,
 #c32,
 #c33 {
-    top: 364px;
+    top: 250px;
 }
 
 #c00,
 #c10,
 #c20,
 #c30 {
-    left: 16px;
+    left: 10px;
 }
 
 #c01,
 #c11,
 #c21,
 #c31 {
-    left: 132px;
+    left: 90px;
 }
 
 #c02,
 #c12,
 #c22,
 #c32 {
-    left: 248px;
+    left: 170px;
 }
 
 #c03,
 #c13,
 #c23,
 #c33 {
-    left: 364px;
+    left: 250px;
 }
 
 .n2 {
@@ -166,7 +171,7 @@
 /*分数显示*/
 
 p {
-    width: 480px;
+    width: 100%;
     margin: 0 auto;
     font-family: Arial;
     font-weight: bold;
@@ -213,4 +218,20 @@ p {
     background-color: #9f8b77;
     color: #fff;
     cursor: pointer;
+}
+
+#propTab {
+    width: 330px;
+    height: 90px;
+    margin: 15px auto;
+    position: relative;
+}
+
+.prop{
+    border: 1px solid #d44545;
+}
+
+#iconHammer {
+    background: url('./images/icon_hammer.png');
+    background-size: 70px 70px;
 }

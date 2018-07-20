@@ -2,18 +2,21 @@
 <html>
 
 <head>
-    <title></title>
+    <title>2048 by llkui</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="2048.css" />
-    <script src="2048.js"></script>
-    <script>
-    </script>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="./2048.css" />
+    <link rel="manifest" href="./manifest.json">
+    <!-- 引用manifest文件 -->
 </head>
 
 <body>
     <p>Score:
         <span id="score"></span>
     </p>
+    <div id="propTab">
+        <div id="iconHammer" class="grid prop"></div>
+    </div>
     <div id="gridPanel">
         <!--背景格-->
         <!--第1行-->
@@ -72,6 +75,8 @@
             <a class="button" onclick="game.start()">Try again!</a>
         </p>
     </div>
+    <script src="./2048.js"></script>
+    <script src="./hammer.js"></script>
 </body>
 
 </html>
